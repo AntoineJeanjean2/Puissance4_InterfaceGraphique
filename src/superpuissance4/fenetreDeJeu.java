@@ -14,8 +14,22 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     /**
      * Creates new form fenetreDeJeu
      */
+    Joueur[] listeJoueurs= new Joueur[2];
+    Grille grilleJeu=new Grille();
+    Joueur joueurCourant;
+    
     public fenetreDeJeu() {
         initComponents();
+        panneauInfoJoueurs.setVisible(false);
+        panneauInfoPartie.setVisible(false);
+        
+        for(int i=5;i>=0;i--){
+            for (int j=0; j<7; j++){
+                CelluleGraphique cellGraph=new CelluleGraphique(grilleJeu.Cellules[i][j]);
+                panneauGrille.add(cellGraph);
+            }
+            
+        }
     }
 
     /**
@@ -112,6 +126,11 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         panneauCreationPartie.add(nomJoueur2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 140, -1));
 
         btn_start.setText("Démarrer la Partie");
+        btn_start.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_startActionPerformed(evt);
+            }
+        });
         panneauCreationPartie.add(btn_start, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, -1, -1));
 
         getContentPane().add(panneauCreationPartie, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 50, 290, 140));
@@ -219,6 +238,11 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     private void lbl_jcourantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lbl_jcourantActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_lbl_jcourantActionPerformed
+
+    private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
+        panneauInfoJoueurs.setVisible(true);
+        panneauInfoPartie.setVisible(true);
+    }//GEN-LAST:event_btn_startActionPerformed
 
     /**
      * @param args the command line arguments
