@@ -7,7 +7,7 @@ package superpuissance4;
 
 /**
  *
- * @author antoi
+ * @author Antoine Jeanjean
  */
 public class Joueur {
     String nom;
@@ -30,8 +30,22 @@ public class Joueur {
                 break;
             }
             }    
-}
 
+    public void obtenirDesintegrateur(){
+        nombreDesintegrateurs++;
+}
+    public boolean utiliserDesintegrateur(){
+        if (nombreDesintegrateurs<1){
+            return false;
+        }
+        else{
+            nombreDesintegrateurs--;
+            return true;
+        }
+    }
+}
+                 
+    
     
 
                  
