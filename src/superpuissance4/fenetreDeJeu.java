@@ -5,6 +5,9 @@
  */
 package superpuissance4;
 
+import java.util.Random;
+import java.util.Scanner;
+
 /**
  *
  * @author antoi
@@ -242,6 +245,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
         panneauInfoJoueurs.setVisible(true);
         panneauInfoPartie.setVisible(true);
+        initialiserPartie();
     }//GEN-LAST:event_btn_startActionPerformed
 
     /**
@@ -278,6 +282,52 @@ public class fenetreDeJeu extends javax.swing.JFrame {
             }
         });
     }
+    
+    public void initialiserPartie(){
+        grilleJeu.viderGrille();
+        
+        String nomJ1=nomJoueur1.getText();
+        Joueur J1=new Joueur(nomJ1);
+        String nomJ2=nomJoueur2.getText();
+        Joueur J2=new Joueur(nomJ2);
+        listeJoueurs[0]=J1;
+        listeJoueurs[1]=J2;
+        
+        attribuerCouleursAuxJoueurs();
+        
+        System.out.println(J1.nom+" est de couleur "+J1.couleur);
+        System.out.println(J2.nom+" est de couleur "+J2.couleur);
+    
+        for (int i=0;i<21;i++){
+            J1.ajouter_jeton(new Jeton(J1.couleur));
+            J2.ajouter_jeton(new Jeton(J2.couleur));
+        }
+        
+        Random r = new Random();
+        boolean premierJoueur=r.nextBoolean();
+        if (premierJoueur){
+            joueurCourant=listeJoueurs[0];
+        }
+        else{
+            joueurCourant=listeJoueurs[1];
+        }   
+    }
+    
+    public void attribuerCouleursAuxJoueurs(){
+        Random r =new Random();
+        boolean couleur;
+        couleur=r.nextBoolean();
+        if(couleur){
+            listeJoueurs[0].couleur="Rouge";
+            listeJoueurs[1].couleur="Jaune";
+                    }
+        else{
+            listeJoueurs[0].couleur="Jaune";
+            listeJoueurs[1].couleur="Rouge";
+        
+    
+}
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_col0;
