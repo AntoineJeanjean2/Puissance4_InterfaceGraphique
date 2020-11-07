@@ -203,7 +203,9 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     }//GEN-LAST:event_nomJoueur2ActionPerformed
 
     private void btn_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col4ActionPerformed
-        // TODO add your handling code here:
+
+       
+       
     }//GEN-LAST:event_btn_col4ActionPerformed
 
     private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
@@ -300,7 +302,8 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     
 }
 }
-
+     
+     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_col0;
     private javax.swing.JButton btn_col1;
