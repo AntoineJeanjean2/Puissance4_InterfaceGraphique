@@ -84,19 +84,6 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JTextField" name="lbl_jcourant">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="nomJoueurCourant"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lbl_jcourantActionPerformed"/>
-          </Events>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="120" y="60" width="-1" height="-1"/>
-            </Constraint>
-          </Constraints>
-        </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
           <AuxValues>
             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
@@ -117,6 +104,16 @@
             </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JLabel" name="lbl_jcourant">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="nomJoueurCourant"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="120" y="60" width="-1" height="-1"/>
+            </Constraint>
+          </Constraints>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="panneauCreationPartie">
@@ -274,7 +271,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="couleurJoueur2">
+        <Component class="javax.swing.JLabel" name="lbl_j2_couleur">
           <Properties>
             <Property name="text" type="java.lang.String" value="nomJoueur2"/>
           </Properties>
@@ -284,7 +281,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="lbl_j1_nom1">
+        <Component class="javax.swing.JLabel" name="lbl_j1_nom">
           <Properties>
             <Property name="text" type="java.lang.String" value="nomJoueur1"/>
           </Properties>
@@ -294,7 +291,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="lbl_j1_couleur1">
+        <Component class="javax.swing.JLabel" name="lbl_j1_couleur">
           <Properties>
             <Property name="text" type="java.lang.String" value="couleurJoueur1"/>
           </Properties>
@@ -304,7 +301,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="lbl_j2_nom1">
+        <Component class="javax.swing.JLabel" name="lbl_j2_nom">
           <Properties>
             <Property name="text" type="java.lang.String" value="nomJoueur2"/>
           </Properties>
