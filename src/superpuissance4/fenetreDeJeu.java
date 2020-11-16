@@ -40,7 +40,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
                             Jeton jrecup = c.recupererJeton();
                             joueurCourant.ajouter_jeton(jrecup);
                             prochainJoueur();
-                        } else {
+                       }else {
                             if (joueurCourant.nombreDesintegrateurs > 0) {
                                 message.setText("Le joueur " + joueurCourant.nom + " désintègre un jeton");
                                 c.supprimerJeton();
@@ -72,7 +72,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
                             }
                         }
 
-                }
+                    }
 
                 });
                 panneauGrille.add(cellGraph);

@@ -135,7 +135,10 @@ public class Grille {
 
 
     public boolean colonneRemplie(int colonne){
-        return Cellules[0][colonne].recupererJeton()!=null;
+        if (Cellules[0][colonne].jetonCourant!=null){
+            return true;
+        }
+        return false;
     }  
     
     void tasserColonne(int colonne) {
