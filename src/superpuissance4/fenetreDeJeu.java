@@ -330,6 +330,14 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         if (vict_j2==true && vict_j1==false){
             message.setText("Le Joueur "+listeJoueurs[1].nom+" a gagné !!!");
         }
+        if (vict_j2==true && vict_j1==true){
+            if (joueurCourant==listeJoueurs[0]){
+                message.setText("Le joueur "+listeJoueurs[1].nom+" a gagné !!! (faute de jeu de l'autre joueur)");             
+            }
+            else{
+                message.setText("Le joueur "+listeJoueurs[0].nom+" a gagné !!! (faute de jeu de l'autre joueur)");
+            }
+        }
         
         lbl_nb_desint_j1.setText(listeJoueurs[0].nombreDesintegrateurs+"");
         lbl_nb_desint_j2.setText(listeJoueurs[1].nombreDesintegrateurs+"");
