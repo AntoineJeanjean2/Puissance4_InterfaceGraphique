@@ -32,9 +32,6 @@ public class Grille {
                 Cellules[6-i][colonne].jetonCourant=jeton;
                 return true;
             }   
-            if (i==6){
-                return false;
-            }
         } return false;
         }
 
@@ -141,14 +138,20 @@ public class Grille {
         return Cellules[0][colonne].recupererJeton()!=null;
     }  
     
-    public void tasserGrille(int ligne, int colonne){
-        for (int i = ligne; i >=0 ; i--) {
+    public void tasserColonne(int colonne){
+        for (int i = 5; i >=0 ; i--) {
             if (i == 0) {
                 Cellules[i][colonne].jetonCourant = null;
             } else {
                 Cellules[i][colonne].jetonCourant = Cellules[i - 1][colonne].jetonCourant;
             }
 
+        }
+    }
+    
+    public void tasserGrille(){
+        for (int i=0; i<7; i++){
+            tasserColonne(i);
         }
     }
     
