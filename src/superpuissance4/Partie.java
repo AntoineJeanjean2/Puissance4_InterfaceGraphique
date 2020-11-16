@@ -152,7 +152,7 @@ public class Partie {
                 
                 if (grilleJeu.Cellules[ligne][colonne]!=null && grilleJeu.Cellules[ligne][colonne].lireCouleurDuJeton().equals(joueurCourant.couleur)){
                     grilleJeu.recupererJeton(ligne, colonne);
-                    grilleJeu.tasserGrille(ligne, colonne);
+                    grilleJeu.tasserColonne(colonne);
                 }    
                 else{
                     System.out.println("Vous ne pouvez pas récupérer un jeton adverse ou un jeton sur une cellule vide");
@@ -188,7 +188,7 @@ public class Partie {
                     
                     if (grilleJeu.Cellules[ligne][colonne]!=null && !grilleJeu.Cellules[ligne][colonne].lireCouleurDuJeton().equals(joueurCourant.couleur)){
                         grilleJeu.Cellules[ligne][colonne].supprimerJeton();
-                        grilleJeu.tasserGrille(ligne, colonne);
+                        grilleJeu.tasserColonne(colonne);
                         joueurCourant.utiliserDesintegrateur();
                     }      
                         
