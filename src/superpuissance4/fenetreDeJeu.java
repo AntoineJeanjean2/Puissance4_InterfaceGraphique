@@ -26,7 +26,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         panneauInfoJoueurs.setVisible(false);
         panneauInfoPartie.setVisible(false);
         
-        for(int i=5;i>=0;i--){
+        for(int i=0;i<6;i++){
             for (int j=0; j<7; j++){
                 CelluleGraphique cellGraph=new CelluleGraphique(grilleJeu.Cellules[i][j]);
                 panneauGrille.add(cellGraph);
@@ -186,15 +186,35 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         getContentPane().add(panneauInfoJoueurs, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 210, 290, 240));
 
         btn_col0.setText("1");
+        btn_col0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_col0ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_col0, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, -1));
 
         btn_col1.setText("2");
+        btn_col1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_col1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_col1, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 10, -1, -1));
 
         btn_col2.setText("3");
+        btn_col2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_col2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_col2, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 10, -1, -1));
 
         btn_col3.setText("4");
+        btn_col3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_col3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_col3, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 10, -1, -1));
 
         btn_col4.setText("5");
@@ -206,9 +226,19 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         getContentPane().add(btn_col4, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 10, -1, -1));
 
         btn_col5.setText("6");
+        btn_col5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_col5ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_col5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, -1, -1));
 
         btn_col6.setText("7");
+        btn_col6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_col6ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_col6, new org.netbeans.lib.awtextra.AbsoluteConstraints(626, 10, -1, -1));
 
         setBounds(0, 0, 1044, 702);
@@ -219,7 +249,11 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     }//GEN-LAST:event_nomJoueur2ActionPerformed
 
     private void btn_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col4ActionPerformed
-
+        jouerDansColonne(4);
+        if (grilleJeu.colonneRemplie(4)==true){
+            btn_col4.setEnabled(false);
+        }    
+        prochainJoueur();
        
        
     }//GEN-LAST:event_btn_col4ActionPerformed
@@ -232,9 +266,93 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         btn_start.setEnabled(false);
     }//GEN-LAST:event_btn_startActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    
+    private void btn_col1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col1ActionPerformed
+        jouerDansColonne(1);
+        if (grilleJeu.colonneRemplie(1)==true){
+            btn_col1.setEnabled(false);
+        }        
+        prochainJoueur();
+    }//GEN-LAST:event_btn_col1ActionPerformed
+
+    private void btn_col0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col0ActionPerformed
+        jouerDansColonne(0);
+        if (grilleJeu.colonneRemplie(0)==true){
+            btn_col0.setEnabled(false);
+        }
+        prochainJoueur();
+    }//GEN-LAST:event_btn_col0ActionPerformed
+
+    private void btn_col2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col2ActionPerformed
+        jouerDansColonne(2);
+        if (grilleJeu.colonneRemplie(2)==true){
+            btn_col2.setEnabled(false);
+        }
+        prochainJoueur();
+    }//GEN-LAST:event_btn_col2ActionPerformed
+
+    private void btn_col3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col3ActionPerformed
+        jouerDansColonne(3);
+        if (grilleJeu.colonneRemplie(3)==true){
+            btn_col3.setEnabled(false);
+        }
+        prochainJoueur();
+    }//GEN-LAST:event_btn_col3ActionPerformed
+
+    private void btn_col5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col5ActionPerformed
+        jouerDansColonne(5);
+        if (grilleJeu.colonneRemplie(5)==true){
+            btn_col5.setEnabled(false);
+        }
+        prochainJoueur();
+    }//GEN-LAST:event_btn_col5ActionPerformed
+
+    private void btn_col6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col6ActionPerformed
+        jouerDansColonne(6);
+        if (grilleJeu.colonneRemplie(6)==true){
+            btn_col6.setEnabled(false);
+        }
+        prochainJoueur();
+    }//GEN-LAST:event_btn_col6ActionPerformed
+    
+    public boolean jouerDansColonne(int indiceColonne){
+
+        boolean jetonAposer;
+        jetonAposer = grilleJeu.ajouterJetonDansColonne(joueurCourant,joueurCourant.listeJetons[joueurCourant.nombreJetonsRestants - 1], indiceColonne);
+        panneauGrille.repaint();
+        
+        boolean vict_j1=grilleJeu.etreGagnantePourJoueur(listeJoueurs[0]);
+        boolean vict_j2=grilleJeu.etreGagnantePourJoueur(listeJoueurs[1]);
+        
+        if (vict_j1==true && vict_j2==false){
+            message.setText("Le Joueur "+listeJoueurs[0].nom+" a gagné !!!");
+        }
+        if (vict_j2==true && vict_j1==false){
+            message.setText("Le Joueur "+listeJoueurs[1].nom+" a gagné !!!");
+        }
+        
+        lbl_nb_desint_j1.setText(listeJoueurs[0].nombreDesintegrateurs+"");
+        lbl_nb_desint_j2.setText(listeJoueurs[1].nombreDesintegrateurs+"");
+        
+        if (jetonAposer == true) {     
+            return true;
+}
+        else{
+            return false;
+}
+
+}
+    public void prochainJoueur() {
+            if (listeJoueurs[0] == joueurCourant) {
+                joueurCourant=listeJoueurs[1];
+                
+            }
+            else{
+                joueurCourant=listeJoueurs[0];
+            }
+            lbl_jcourant.setText(joueurCourant.nom);
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

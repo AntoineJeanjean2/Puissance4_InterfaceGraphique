@@ -138,7 +138,7 @@ public class Grille {
 
 
     public boolean colonneRemplie(int colonne){
-        return Cellules[5][colonne].recupererJeton()!=null;
+        return Cellules[0][colonne].recupererJeton()!=null;
     }  
     
     public void tasserGrille(int ligne, int colonne){
