@@ -299,6 +299,8 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         if (grilleJeu.colonneRemplie(4) == true) {
             btn_col4.setEnabled(false);
         }
+        boolean vict_j1 = grilleJeu.etreGagnantePourJoueur(listeJoueurs[0]);
+        boolean vict_j2 = grilleJeu.etreGagnantePourJoueur(listeJoueurs[1]);
         prochainJoueur();
 
 
@@ -375,17 +377,37 @@ public class fenetreDeJeu extends javax.swing.JFrame {
 
         if (vict_j1 == true && vict_j2 == false) {
             message.setText("Le Joueur " + listeJoueurs[0].nom + " a gagné !!!");
+            btn_col0.setEnabled(false);
+            btn_col1.setEnabled(false);
+            btn_col2.setEnabled(false);
+            btn_col3.setEnabled(false);
+            btn_col4.setEnabled(false);
+            btn_col5.setEnabled(false);
+            btn_col6.setEnabled(false);            
         }
         if (vict_j2 == true && vict_j1 == false) {
             message.setText("Le Joueur " + listeJoueurs[1].nom + " a gagné !!!");
+            btn_col0.setEnabled(false);
+            btn_col1.setEnabled(false);
+            btn_col2.setEnabled(false);
+            btn_col3.setEnabled(false);
+            btn_col4.setEnabled(false);
+            btn_col5.setEnabled(false);
+            btn_col6.setEnabled(false);
         }
         if (vict_j2 == true && vict_j1 == true) {
             if (joueurCourant == listeJoueurs[0]) {
                 message.setText("Le joueur " + listeJoueurs[1].nom + " a gagné !!! (faute de jeu de l'autre joueur)");
             } else {
                 message.setText("Le joueur " + listeJoueurs[0].nom + " a gagné !!! (faute de jeu de l'autre joueur)");
-            }
-        }
+            }btn_col0.setEnabled(false);
+             btn_col1.setEnabled(false);
+             btn_col2.setEnabled(false);
+             btn_col3.setEnabled(false);
+             btn_col4.setEnabled(false);
+             btn_col5.setEnabled(false);
+             btn_col6.setEnabled(false);
+        }   
 
         if (jetonAposer == true) {
             return true;
