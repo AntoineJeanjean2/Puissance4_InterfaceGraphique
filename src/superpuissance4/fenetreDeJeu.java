@@ -62,7 +62,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
                             message.setText("Le Joueur " + listeJoueurs[0].nom + " a gagné !!!");
                         }
                         if (vict_j2 == true && vict_j1 == false) {
-                            message.setText("Le Joueur " + listeJoueurs[1].nom + " a gagné !!!");
+                            message.setText("Le Joueur " + listeJoueurs[1].nom + " a gagné !!!");                           
                         }
                         if (vict_j2 == true && vict_j1 == true) {
                             if (joueurCourant == listeJoueurs[0]) {
@@ -375,7 +375,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         boolean vict_j1 = grilleJeu.etreGagnantePourJoueur(listeJoueurs[0]);
         boolean vict_j2 = grilleJeu.etreGagnantePourJoueur(listeJoueurs[1]);
 
-        if (vict_j1 == true && vict_j2 == false) {
+        if (vict_j1 == true && vict_j2 == false) {   //Quand la partie se termine, on affiche le vainqueur, et on désactive les boutons pour placer les jetons
             message.setText("Le Joueur " + listeJoueurs[0].nom + " a gagné !!!");
             btn_col0.setEnabled(false);
             btn_col1.setEnabled(false);
