@@ -40,7 +40,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
                             Jeton jrecup = c.recupererJeton();
                             joueurCourant.ajouter_jeton(jrecup);
                             prochainJoueur();
-                       }else {
+                        } else {
                             if (joueurCourant.nombreDesintegrateurs > 0) {
                                 message.setText("Le joueur " + joueurCourant.nom + " désintègre un jeton");
                                 c.supprimerJeton();
@@ -51,6 +51,29 @@ public class fenetreDeJeu extends javax.swing.JFrame {
                             }
                         }
                         grilleJeu.tasserGrille();
+                        
+                        if (grilleJeu.colonneRemplie(0)==false){  //Cette suite de if permet de tester si à la suite d'un désintégration ou d'une récupération
+                            btn_col0.setEnabled(true);            // de jeton, une colonne précedemment remplie n'a pas de nouveau une place disponible
+                        }                                         //Si c'est le cas, on réactive le bouton correspondant à cette colonne afin de pouvoir y
+                        if (grilleJeu.colonneRemplie(1)==false){  // replacer de nouveau un jeton
+                            btn_col1.setEnabled(true);
+                        }
+                        if (grilleJeu.colonneRemplie(2)==false){
+                            btn_col2.setEnabled(true);
+                        }
+                        if (grilleJeu.colonneRemplie(3)==false){
+                            btn_col3.setEnabled(true);
+                        }
+                        if (grilleJeu.colonneRemplie(4)==false){
+                            btn_col4.setEnabled(true);
+                        }
+                        if (grilleJeu.colonneRemplie(5)==false){
+                            btn_col5.setEnabled(true);
+                        }
+                        if (grilleJeu.colonneRemplie(6)==false){
+                            btn_col6.setEnabled(true);
+                        }
+                        
                         panneauGrille.repaint();
                         lbl_nb_desint_j1.setText(listeJoueurs[0].nombreDesintegrateurs + "");
                         lbl_nb_desint_j2.setText(listeJoueurs[1].nombreDesintegrateurs + "");
@@ -62,7 +85,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
                             message.setText("Le Joueur " + listeJoueurs[0].nom + " a gagné !!!");
                         }
                         if (vict_j2 == true && vict_j1 == false) {
-                            message.setText("Le Joueur " + listeJoueurs[1].nom + " a gagné !!!");                           
+                            message.setText("Le Joueur " + listeJoueurs[1].nom + " a gagné !!!");
                         }
                         if (vict_j2 == true && vict_j1 == true) {
                             if (joueurCourant == listeJoueurs[0]) {
@@ -299,8 +322,6 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         if (grilleJeu.colonneRemplie(4) == true) {
             btn_col4.setEnabled(false);
         }
-        boolean vict_j1 = grilleJeu.etreGagnantePourJoueur(listeJoueurs[0]);
-        boolean vict_j2 = grilleJeu.etreGagnantePourJoueur(listeJoueurs[1]);
         prochainJoueur();
 
 
@@ -371,11 +392,11 @@ public class fenetreDeJeu extends javax.swing.JFrame {
 
         lbl_nb_desint_j1.setText(listeJoueurs[0].nombreDesintegrateurs + "");
         lbl_nb_desint_j2.setText(listeJoueurs[1].nombreDesintegrateurs + "");
-
+        
         boolean vict_j1 = grilleJeu.etreGagnantePourJoueur(listeJoueurs[0]);
         boolean vict_j2 = grilleJeu.etreGagnantePourJoueur(listeJoueurs[1]);
-
-        if (vict_j1 == true && vict_j2 == false) {   //Quand la partie se termine, on affiche le vainqueur, et on désactive les boutons pour placer les jetons
+        
+        if (vict_j1 == true && vict_j2 == false) {   //Quand la partie se termine, on affiche le vainqueur, et on désactive les boutons pour placer des jetons
             btn_col0.setEnabled(false);
             btn_col1.setEnabled(false);
             btn_col2.setEnabled(false);
@@ -383,7 +404,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
             btn_col4.setEnabled(false);
             btn_col5.setEnabled(false);
             btn_col6.setEnabled(false);
-            message.setText("Le Joueur " + listeJoueurs[0].nom + " a gagné !!!");            
+            message.setText("Le Joueur " + listeJoueurs[0].nom + " a gagné !!!");
         }
         if (vict_j2 == true && vict_j1 == false) {
             btn_col0.setEnabled(false);
@@ -395,21 +416,21 @@ public class fenetreDeJeu extends javax.swing.JFrame {
             btn_col6.setEnabled(false);
             message.setText("Le Joueur " + listeJoueurs[1].nom + " a gagné !!!");
         }
-        
+
         if (vict_j2 == true && vict_j1 == true) {
-             btn_col0.setEnabled(false);
-             btn_col1.setEnabled(false);
-             btn_col2.setEnabled(false);
-             btn_col3.setEnabled(false);
-             btn_col4.setEnabled(false);
-             btn_col5.setEnabled(false);
-             btn_col6.setEnabled(false);
+            btn_col0.setEnabled(false);
+            btn_col1.setEnabled(false);
+            btn_col2.setEnabled(false);
+            btn_col3.setEnabled(false);
+            btn_col4.setEnabled(false);
+            btn_col5.setEnabled(false);
+            btn_col6.setEnabled(false);
             if (joueurCourant == listeJoueurs[0]) {
                 message.setText("Le joueur " + listeJoueurs[1].nom + " a gagné !!! (faute de jeu de l'autre joueur)");
             } else {
                 message.setText("Le joueur " + listeJoueurs[0].nom + " a gagné !!! (faute de jeu de l'autre joueur)");
             }
-        }   
+        }
 
         if (jetonAposer == true) {
             return true;
